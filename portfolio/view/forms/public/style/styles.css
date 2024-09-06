@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    --main-color: #754ef9;
+}
+
+.dark-mode {
+    --primary-color: #0b061f;
+    --secondary-color: #fff;
+}
+
+body {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    overflow: hidden;
+}
+
+.header {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 7%;
+    background: transparent;
+    display: flex;
+}
+
+.logo {
+    font-size: 25px;
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    margin-right: auto;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 79px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
+.toggle {
+    display: flex;
+    background: transparent;
+    color: #fff;
+    fill: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 3.5s;
+}
+
+.toggle.toggle-icon {
+    font-size: 40px;
+    color: #fff;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 7% 0;
+    justify-content: center;
+}
+
+.home .home-content {
+    max-width: 440px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    line-height: .3;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 7s;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-top: -10%;
+    margin-left: -3%;
+    margin-bottom: 3px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 16px;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    color: var(--main-color);
+    text-decoration: none;
+    margin: 25px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--main-color);
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    border: 2px solid transparent;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.home .profession-container {
+    bottom: 25px;
+    left: 280px;
+    position: relative;
+    top: 50;
+    right: 100;
+    transform: translateZ(-80%);
+    width: 768px;
+    height: 768px;
+    margin-top: -50px;
+    overflow: hidden;
+}
+
+.profession-container  {
+    position: absolute;
+    top: 0;
+    right: 50; 
+    width: 0;
+    height: 0;
+    border-top:  384px solid blue;
+    border-right: 384px solid blue;
+    border-bottom: 384px solid blue;
+    border-left: 384px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+     /* animation: slideLeft 1s ease forwards, professionRotate 13s ease-out infinite; */
+    /* animation-delay: 2.5s, 3.5s; */
+    
+}
+
+
+.profession-box  {
+    position: absolute;
+    left: 50;
+    transform-origin: 350px;
+    /* transform: rotate(calc(360deg / 4 * var(--i))); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--main-color);
+    background: var(--primary-color);
+    padding: 13px 0;
+   
+}
+
+.profession h3 {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.profession-box .circle {
+    width: 72px;
+    height: 72px;
+    border: 3px solid var(--main-color);
+    border-radius: 50%;
+}
+
+/* .profession-container .overlay {
+    position: absolute;
+    top: 0;
+    right: 100;
+    width: 0;
+    height: 0;
+    border-top: 384px solid var(--main-color);
+    border-right: 384px solid var(--main-color);
+    border-bottom: 384px solid var(--main-color);
+    border-left: 384px solid transparent;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.5s;
+} */
+
+.home-img img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20vw;
+    height: 20vw;
+    margin-bottom: 260px;
+    margin-left: 920px;
+    border-radius: 50%;
+    border: 5px solid var(--main-color);
+    pointer-events: none;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-100px);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(100px);
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes professionRotate {
+    0%, 20% {
+        transform: rotate(0deg);
+    }
+    25%, 50% {
+        transform: rotate(90deg);
+    }
+    50%, 75% {
+        transform: rotate(180deg);
+    }
+    75%, 95% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
